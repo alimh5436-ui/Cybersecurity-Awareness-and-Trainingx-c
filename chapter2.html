@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ch2PageTitle">نظام التوعية والتدريب في الأمن السيبراني - الفصل الثاني</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slide-in-right {
+            animation: slideRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes slideRight {
+            0% { opacity: 0; transform: translateX(60px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .media-box { text-align: center; margin: 25px 0; }
+        .media-box img {
+            max-width: 100%; height: auto; border-radius: 12px;
+            border: 1px solid #334155; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        .content-paragraph { color: #e2e8f0; font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        body.light-mode .content-paragraph { color: #0f172a !important; font-weight: 500; }
+        
+        .sub-heading { color: #38bdf8; font-size: 1.25rem; margin: 20px 0 10px 0; }
+        body.light-mode .sub-heading { color: #2563eb !important; }
+
+        .custom-list { list-style: none; padding-right: 0; margin-bottom: 20px; }
+        .custom-list li { position: relative; padding-right: 25px; margin-bottom: 12px; color: #cbd5e1; line-height: 1.7; }
+        body.light-mode .custom-list li { color: #1e293b !important; font-weight: 500; }
+        .custom-list li::before { content: "🔹"; position: absolute; right: 0; top: 2px; }
+
+        body.light-mode .intro-card { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box h3, body.light-mode .feature-box p { color: #0f172a !important; }
+        body.light-mode .centered-title { color: #2563eb !important; }
+    </style>
+</head>
+<body>
+
+    <!-- أدوات التحكم العلوية -->
+    <div class="top-controls">
+        <a href="index.html" class="lang-switch-btn" style="text-decoration: none;" onclick="localStorage.setItem('cyberBackupEnabled', 'true');" data-i18n="backHome">🏠 العودة للرئيسية</a>
+        <button class="lang-switch-btn" onclick="toggleChapterLanguage()">🌐 EN / AR</button>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header class="header slide-in-right">
+        <h1 class="main-title" data-i18n="mainTitle">نظام التوعية والتدريب في الأمن السيبراني</h1>
+        <p class="subtitle" data-i18n="ch2SubTitle">الفصل الثاني: كشف التصيد الاحتيالي - تمارين عملية لاكتشاف الرسائل المزيفة والروابط المشبوهة</p>
+    </header>
+
+    <main class="main-content slide-in-right">
+        
+        <!-- الفقرة الأولى -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch2Title1">ما هو التصيد الاحتيالي؟</h2>
+            <p class="content-paragraph" data-i18n="ch2Text1">
+                التصيد الاحتيالي هو نوع من الجرائم السيبرانية يستخدم فيه المهاجمون الخداع، انتحال الشخصية، والهندسة الاجتماعية للحصول على معلومات حساسة (مثل كلمات المرور، تفاصيل البطاقات الائتمانية، أو معلومات شخصية).
+            </p>
+            <p class="content-paragraph" data-i18n="ch2Text1Sub">
+                سُمّـيَ بالتصيّد لأن المهاجمون "يتصيدون" الضحايا باستخدام "طُعَم" كأنها موثوقة. من الأمثلة على ذلك: بريد إلكتروني، رسالة نصية، أو مكالمة هاتفية، على أمل أن يضغط الشخص على رابط، أو يشارك معلومات، أو يفتح ملفاً ضاراً.
+            </p>
+            <div class="media-box">
+                <img src="c2img1.jpg" alt="مفهوم التصيد الاحتيالي">
+            </div>
+        </section>
+
+        <!-- الفقرة الثانية -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch2Title2">لماذا يعتبر التصيد الاحتيالي خطيراً؟</h2>
+            <ul class="custom-list">
+                <li data-i18n="p1"><strong>سرقة الهوية:</strong> يستخدم معلوماتك لفتح حسابات أو تقديم طلبات باسمك.</li>
+                <li data-i18n="p2"><strong>خسائر مالية:</strong> يقوم بالوصول المباشر إلى حساباتك البنكية أو بطاقاتك الائتمانية.</li>
+                <li data-i18n="p3"><strong>الوصول إلى الحسابات:</strong> يتحكم في حساباتك على وسائل التواصل الاجتماعي أو البريد الإلكتروني.</li>
+                <li data-i18n="p4"><strong>الإضرار بالسمعة:</strong> يستخدم حساباتك لإرسال رسائل احتيالية لأصدقائك وعائلتك.</li>
+                <li data-i18n="p5"><strong>إصابة الأجهزة:</strong> يؤدي الى تنزيل برمجيات ضارة (مثل برمجيات الفدية) التي تشفر ملفاتك.</li>
+            </ul>
+            <div class="media-box">
+                <img src="c2img2.jpg" alt="خطورة التصيد الاحتيالي">
+            </div>
+        </section>
+
+        <!-- الفقرة الثالثة -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch2Title3">كيف تتعرف على التصيّد الاحتيالي؟</h2>
+            <p class="content-paragraph" data-i18n="ch2Text3">
+                يمكن التعرف عليه من خلال العلامات الشائعة وهي:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="t1"><strong>علامات البريد الإلكتروني المشبوهة:</strong> عنوان مرسل غريب؛ لذا يجب فحص عنوان البريد الإلكتروني بعناية (ليس الاسم الظاهر فقط). غالباً ما يكون مشابهاً ولكنه غير صحيح (مثال: support@paypaI.com بدلاً من paypal.com).</li>
+                <li data-i18n="t2"><strong>أخطاء إملائية ونحوية:</strong> الرسائل الرسمية من الشركات الكبرى تكون مراجَعَة ونادراً ما تحتوي على أخطاء.</li>
+                <li data-i18n="t3"><strong>نغمة ملحة وتهديدية:</strong> استخدام عبارات مثل "تصرف الآن!"، "سيتم إغلاق حسابك"، "ضروري جداً" لخلق شعور بالاستعجال.</li>
+                <li data-i18n="t4"><strong>روابط مشبوهة:</strong> مرر الماوس فوق الروابط لمعاينة العنوان الفعلي قبل الضغط. (يجب أن يبدأ العنوان بـ HTTPS://).</li>
+                <li data-i18n="t5"><strong>طلبات لمعلومات شخصية:</strong> لأن الشركات الموثوقة لا تطلب كلمات المرور أو معلومات حساسة عبر البريد الإلكتروني.</li>
+            </ul>
+            <div class="media-box">
+                <img src="c2img3.jpg" alt="طرق التعرف على التصيد الاحتيالي">
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 40px 0; display: flex; justify-content: space-between; gap: 15px;">
+            <a href="chapter1.html" class="primary-btn" style="display: inline-block; padding: 12px 25px; text-decoration: none; width: auto; background: #334155; color: #f8fafc;" data-i18n="prevChapterBtn">⬅️ العودة للفصل الأول</a>
+            <a href="chapter3.html" class="primary-btn" style="display: inline-block; padding: 12px 25px; text-decoration: none; width: auto;" data-i18n="nextChapterBtn">الانتقال للفصل الثالث: كلمات المرور ➡️</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="footerText">جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني</p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('cyberLang') || 'ar';
+        
+        const ch2Translations = {
+            ar: {
+                backHome: "🏠 العودة للرئيسية",
+                mainTitle: "نظام التوعية والتدريب في الأمن السيبراني",
+                ch2SubTitle: "الفصل الثاني: كشف التصيد الاحتيالي - تمارين عملية لاكتشاف الرسائل المزيفة والروابط المشبوهة",
+                ch2Title1: "ما هو التصيد الاحتيالي؟",
+                ch2Text1: "التصيد الاحتيالي هو نوع من الجرائم السيبرانية يستخدم فيه المهاجمون الخداع، انتحال الشخصية، والهندسة الاجتماعية للحصول على معلومات حساسة (مثل كلمات المرور، تفاصيل البطاقات الائتمانية، أو معلومات شخصية).",
+                ch2Text1Sub: "سُمّـيَ بالتصيّد لأن المهاجمون \"يتصيدون\" الضحايا باستخدام \"طُعَم\" كأنها موثوقة. من الأمثلة على ذلك: بريد إلكتروني، رسالة نصية، أو مكالمة هاتفية، على أمل أن يضغط الشخص على رابط، أو يشارك معلومات، أو يفتح ملفاً ضاراً.",
+                ch2Title2: "لماذا يعتبر التصيد الاحتيالي خطيراً؟",
+                p1: "سرقة الهوية: يستخدم معلوماتك لفتح حسابات أو تقديم طلبات باسمك.",
+                p2: "خسائر مالية: يقوم بالوصول المباشر إلى حساباتك البنكية أو بطاقاتك الائتمانية.",
+                p3: "الوصول إلى الحسابات: يتحكم في حساباتك على وسائل التواصل الاجتماعي أو البريد الإلكتروني.",
+                p4: "الإضرار بالسمعة: يستخدم حساباتك لإرسال رسائل احتيالية لأصدقائك وعائلتك.",
+                p5: "إصابة الأجهزة: يؤدي الى تنزيل برمجيات ضارة (مثل برمجيات الفدية) التي تشفر ملفاتك.",
+                ch2Title3: "كيف تتعرف على التصيّد الاحتيالي؟",
+                ch2Text3: "يمكن التعرف عليه من خلال العلامات الشائعة وهي:",
+                t1: "علامات البريد الإلكتروني المشبوهة: عنوان مرسل غريب؛ لذا يجب فحص عنوان البريد الإلكتروني بعناية (ليس الاسم الظاهر فقط). غالباً ما يكون مشابهاً ولكنه غير صحيح (مثال: support@paypaI.com بدلاً من paypal.com).",
+                t2: "أخطاء إملائية ونحوية: الرسائل الرسمية من الشركات الكبرى تكون مراجَعَة ونادراً ما تحتوي على أخطاء.",
+                t3: "نغمة ملحة وتهديدية: استخدام عبارات مثل \"تصرف الآن!\"، \"سيتم إغلاق حسابك\"، \"ضروري جداً\" لخلق شعور بالاستعجال.",
+                t4: "روابط مشبوهة: مرر الماوس فوق الروابط لمعاينة العنوان الفعلي قبل الضغط. (يجب أن يبدأ العنوان بـ HTTPS://).",
+                t5: "طلبات لمعلومات شخصية: لأن الشركات الموثوقة لا تطلب كلمات المرور أو معلومات حساسة عبر البريد الإلكتروني.",
+                prevChapterBtn: "⬅️ العودة للفصل الأول",
+                nextChapterBtn: "الانتقال للفصل الثالث: كلمات المرور ➡️",
+                footerText: "جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني"
+            },
+            en: {
+                backHome: "🏠 Back to Home",
+                mainTitle: "Cybersecurity Awareness and Training System",
+                ch2SubTitle: "Chapter 2: Phishing Detection - Practical exercises to discover fake messages and links",
+                ch2Title1: "What is Phishing?",
+                ch2Text1: "Phishing is a type of cybercrime where attackers use deception, impersonation, and social engineering to obtain sensitive information.",
+                ch2Text1Sub: "It is called phishing because attackers 'fish' for victims using trusted 'bait' like emails, texts, or calls.",
+                ch2Title2: "Why is Phishing Dangerous?",
+                p1: "Identity Theft: Uses your info to open accounts or apply for requests in your name.",
+                p2: "Financial Losses: Direct access to bank accounts or credit cards.",
+                p3: "Account Takeover: Controls social media or email accounts.",
+                p4: "Reputational Damage: Uses your accounts to send scam messages to contacts.",
+                p5: "Malware Infection: Downloads harmful software (like ransomware) encrypting files.",
+                ch2Title3: "How to Spot Phishing?",
+                ch2Text3: "It can be identified through common signs:",
+                t1: "Suspicious Email Signs: Strange sender address. Always check carefully.",
+                t2: "Spelling & Grammar Errors: Official messages are reviewed and rarely contain errors.",
+                t3: "Urgent & Threatening Tone: Using phrases like 'Act Now!' or 'Account Closing'.",
+                t4: "Suspicious Links: Hover over links to preview URLs before clicking.",
+                t5: "Personal Info Requests: Trusted companies never ask for passwords via email.",
+                prevChapterBtn: "⬅️ Back to Chapter 1",
+                nextChapterBtn: "Proceed to Chapter 3: Passwords ➡️",
+                footerText: "All Rights Reserved © 2027 | Cybersecurity Awareness and Training System"
+            }
+        };
+
+        function toggleChapterLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('cyberLang', currentLang);
+            const htmlRoot = document.getElementById('htmlRoot');
+            htmlRoot.setAttribute('lang', currentLang);
+            htmlRoot.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (ch2Translations[currentLang][key]) {
+                    el.innerText = ch2Translations[currentLang][key];
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (currentLang === 'en') {
+                toggleChapterLanguage();
+                currentLang = 'en';
+            }
+            if (localStorage.getItem('cyberThemeMode') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

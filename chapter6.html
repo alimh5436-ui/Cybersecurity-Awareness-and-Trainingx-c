@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ch6PageTitle">نظام التوعية والتدريب في الأمن السيبراني - الفصل السادس</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slide-in-right {
+            animation: slideRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes slideRight {
+            0% { opacity: 0; transform: translateX(60px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .media-box { text-align: center; margin: 25px 0; }
+        .media-box img {
+            max-width: 650px; width: 100%; height: auto; border-radius: 12px;
+            border: 1px solid #334155; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        .content-paragraph { color: #e2e8f0; font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        body.light-mode .content-paragraph { color: #0f172a !important; font-weight: 500; }
+
+        .sub-heading { color: #38bdf8; font-size: 1.25rem; margin: 20px 0 10px 0; }
+        body.light-mode .sub-heading { color: #2563eb !important; }
+
+        .custom-list { list-style: none; padding-right: 0; margin-bottom: 20px; }
+        .custom-list li { position: relative; padding-right: 25px; margin-bottom: 12px; color: #cbd5e1; line-height: 1.7; }
+        body.light-mode .custom-list li { color: #1e293b !important; font-weight: 500; }
+        .custom-list li::before { content: "🔹"; position: absolute; right: 0; top: 2px; }
+
+        body.light-mode .intro-card { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box h3, body.light-mode .feature-box p { color: #0f172a !important; }
+        body.light-mode .centered-title { color: #2563eb !important; }
+    </style>
+</head>
+<body>
+
+    <!-- أدوات التحكم العلوية -->
+    <div class="top-controls">
+        <a href="index.html" class="lang-switch-btn" style="text-decoration: none;" onclick="localStorage.setItem('cyberBackupEnabled', 'true');" data-i18n="backHome">🏠 العودة للرئيسية</a>
+        <button class="lang-switch-btn" onclick="toggleChapterLanguage()">🌐 EN / AR</button>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header class="header slide-in-right">
+        <h1 class="main-title" data-i18n="mainTitle">نظام التوعية والتدريب في الأمن السيبراني</h1>
+        <p class="subtitle" data-i18n="ch6SubTitle">الفصل السادس: حماية البيانات - تصنيف المعلومات وحفظها ومشاركتها بصورة آمنة ومنع تسريبها</p>
+    </header>
+
+    <main class="main-content slide-in-right">
+
+        <!-- ماذا نقصد بحماية البيانات؟ -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch6Title1">ماذا نقصد بحماية البيانات؟</h2>
+            <p class="content-paragraph" data-i18n="ch6Text1">
+                حماية البيانات هي مجموعة من السياسات، والإجراءات، والتقنيات التي تهدف إلى ضمان السرية (Confidentiality)، والسلامة (Integrity)، والتوافرية (Availability) للمعلومات الرقمية طوال دورة حياتها (من لحظة إنشائها أو جمعها، وحتى تخزينها، ومشاركتها، وأرشفتها، أو إتلافها).
+            </p>
+            <div class="media-box">
+                <img src="c6img1.jpg" alt="ماذا نقصد بحماية البيانات">
+            </div>
+        </section>
+
+        <!-- أهمية حماية البيانات -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch6Title2">أهمية حماية البيانات</h2>
+            <ul class="custom-list">
+                <li data-i18n="ch6_imp1"><strong>منع التسريب والاختراق:</strong> تحمي المؤسسات والأفراد من الوصول غير المصرح به أو سرقة البيانات الحساسة مثل البيانات الشخصية، المالية، أو الأسرار التجارية.</li>
+                <li data-i18n="ch6_imp2"><strong>بناء الثقة والامتثال:</strong> تعزز ثقة العملاء والمستخدمين، وتساعد على الالتزام بالمعايير والقوانين المنظمة للخصوصية وحماية البيانات.</li>
+                <li data-i18n="ch6_imp3"><strong>تقليل الخسائر:</strong> تحدّ من الأضرار التشغيلية والمالية والسمعية الناتجة عن الحوادث السيبرانية.</li>
+            </ul>
+            <div class="media-box">
+                <img src="c6img2.jpg" alt="أهمية حماية البيانات">
+            </div>
+        </section>
+
+        <!-- الآليات الجوهرية لحماية البيانات -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch6Title3">الآليات الجوهرية لحماية البيانات</h2>
+
+            <h3 class="sub-heading" data-i18n="ch6SubEnc">التشفير (Encryption)</h3>
+            <p class="content-paragraph" data-i18n="ch6TextEnc">
+                تحويل البيانات من صيغتها المقروءة إلى رموز مشفرة لا يمكن فكها إلا بامتلاك مفتاح التشفير الصحيح، ويشمل:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch6_enc1"><strong>تشفير البيانات المخزنة (Data at Rest):</strong> حماية الملفات المحفوظة على الخوادم، قواعد البيانات، والأقراص الصلبة باستخدام خوارزميات قوية مثل AES-256.</li>
+                <li data-i18n="ch6_enc2"><strong>تشفير البيانات المنقولة (Data in Transit):</strong> تأمين البيانات أثناء انتقالها عبر الشبكات والإنترنت لمنع التنصت عليها، عبر بروتوكولات مثل TLS 1.3 والشبكات الافتراضية الخاصة (VPN).</li>
+                <li data-i18n="ch6_enc3"><strong>إدارة المفاتيح (Key Management):</strong> عزل مفاتيح التشفير وتأمينها في وحدات مخصصة (HSM) وتحديثها دورياً.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="ch6SubDlp">منع فقدان وتسريب البيانات (Data Loss Prevention - DLP)</h3>
+            <p class="content-paragraph" data-i18n="ch6TextDlp">
+                حلول برمجية تراقب حركة البيانات وتمنع خروج المعلومات الحساسة خارج بيئة العمل الآمنة:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch6_dlp1"><strong>مراقبة الشبكة:</strong> فحص رسائل البريد الإلكتروني والملفات المرفوعة عبر المتصفحات لمنع إرسال البيانات السرية.</li>
+                <li data-i18n="ch6_dlp2"><strong>التحكم في الأجهزة الطرفية:</strong> منع نسخ البيانات الحساسة إلى وحدات التخزين الخارجية (USB)، أو حظر طباعتها أو التقاط صور لها.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="ch6SubClass">تصنيف البيانات (Data Classification)</h3>
+            <p class="content-paragraph" data-i18n="ch6TextClass">
+                فرز البيانات وتنظيمها بناءً على درجة حساسيتها وأهميتها لتطبيق مستوى الحماية المناسب لكل فئة:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch6_cls1"><strong>بيانات عامة:</strong> متاحة للنشر ولا يشكّل كشفها خطراً.</li>
+                <li data-i18n="ch6_cls2"><strong>بيانات داخلية:</strong> مخصصة للاستخدام داخل المؤسسة فقط.</li>
+                <li data-i18n="ch6_cls3"><strong>بيانات سرية ومقيدة:</strong> مثل البيانات المالية، الطبية، والشخصية.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="ch6SubIam">التحكم في الوصول وإدارة الهويات (IAM)</h3>
+            <p class="content-paragraph" data-i18n="ch6TextIam">
+                تقييد صلاحيات الاطلاع على البيانات وتعديلها بناءً على هوية المستخدم ودوره الوظيفي:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch6_iam1"><strong>مبدأ أقل صلاحية (Least Privilege):</strong> منح المستخدم الحد الأدنى من الصلاحيات اللازمة لأداء مهامه فقط.</li>
+                <li data-i18n="ch6_iam2"><strong>المصادقة متعددة العوامل (MFA):</strong> اشتراط أكثر من وسيلة للتحقق من الهوية قبل السماح بالوصول إلى البيانات الحساسة.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="ch6SubMask">إخفاء البيانات والترميز (Data Masking & Tokenization)</h3>
+            <ul class="custom-list">
+                <li data-i18n="ch6_msk1"><strong>إخفاء البيانات (Masking):</strong> استبدال البيانات الحقيقية بقيم وهمية تحافظ على نفس الشكل الهيكلي (مثل إخفاء أجزاء من رقم الهوية أو الحساب) عند استخدامها في بيئات الاختبار أو التحليل.</li>
+                <li data-i18n="ch6_msk2"><strong>الترميز (Tokenization):</strong> استبدال البيانات الحساسة برمز عشوائي فريد (Token) مع حفظ البيانات الأصلية في خزينة رقمية معزولة.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="ch6SubBackup">النسخ الاحتياطي والإتلاف الآمن (Backup & Secure Disposal)</h3>
+            <ul class="custom-list">
+                <li data-i18n="ch6_bkp1"><strong>النسخ الاحتياطي:</strong> إنشاء نسخ احتياطية مشفرة ومعزولة (وفق قاعدة 3-2-1) لضمان استعادة البيانات بسرعة في حال التعرض لهجمات الفدية (Ransomware) أو الأعطال الفنية.</li>
+                <li data-i18n="ch6_bkp2"><strong>الإتلاف الآمن:</strong> مسح البيانات نهائياً عند انتهاء الحاجة إليها عبر الكتابة فوق قطاعات التخزين (Data Wiping) أو إتلاف مفاتيح التشفير الخاصة بها (Cryptographic Erasure) لمنع استرجاعها بأي أداة جنائية.</li>
+            </ul>
+
+            <div class="media-box">
+                <img src="c6img3.jpg" alt="الآليات الجوهرية لحماية البيانات">
+            </div>
+        </section>
+
+        <!-- خطوات سريعة لحماية بياناتك يومياً -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch6Title4">خطوات سريعة لحماية بياناتك يومياً</h2>
+            <ul class="custom-list">
+                <li data-i18n="ch6_tip1"><strong>قفل الشاشة والتشفير:</strong> استخدم كلمة مرور أو بصمة، لحماية ملفاتك إذا فُقد جهازك أو سُرق.</li>
+                <li data-i18n="ch6_tip2"><strong>مشاركة الملفات بحذر:</strong> لا تشارك ملفاتك مع الجميع، واجعل صلاحية الوصول محدودة.</li>
+                <li data-i18n="ch6_tip3"><strong>تقليل مشاركة البيانات:</strong> لا تنشر معلوماتك الشخصية إلا عند الضرورة.</li>
+                <li data-i18n="ch6_tip4"><strong>مراجعة أذونات التطبيقات:</strong> امنع التطبيقات من الوصول إلى الموقع أو جهات الاتصال دون حاجة.</li>
+                <li data-i18n="ch6_tip5"><strong>مسح بيانات الأجهزة:</strong> احذف بياناتك بالكامل قبل بيع جهازك أو إعطائه لشخص آخر.</li>
+                <li data-i18n="ch6_tip6"><strong>تجنب الشبكات العامة:</strong> لا تستخدم شبكات الواي فاي أو منافذ الشحن العامة لإدخال معلومات حساسة.</li>
+                <li data-i18n="ch6_tip7"><strong>الحذر من الذكاء الاصطناعي:</strong> لا تضع كلمات المرور أو المعلومات السرية في أدوات الذكاء الاصطناعي.</li>
+                <li data-i18n="ch6_tip8"><strong>تنبيهات تسجيل الدخول:</strong> فعّل إشعارات الدخول لتعرف إذا حاول شخص الدخول إلى حسابك.</li>
+            </ul>
+            <div class="media-box">
+                <img src="c6img4.jpg" alt="خطوات سريعة لحماية بياناتك يومياً">
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 40px 0; display: flex; justify-content: space-between; gap: 15px;">
+            <a href="chapter5.html" class="primary-btn" style="display: inline-block; padding: 12px 25px; text-decoration: none; width: auto; background: #334155; color: #f8fafc;" data-i18n="prevChapterBtn">⬅️ العودة للفصل الخامس</a>
+            <a href="chapter7.html" class="primary-btn" style="display: inline-block; padding: 12px 25px; text-decoration: none; width: auto;" data-i18n="nextChapterBtn">الانتقال للفصل السابع: النسخ الاحتياطي ➡️</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="footerText">جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني</p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('cyberLang') || 'ar';
+
+        const ch6Translations = {
+            ar: {
+                backHome: "🏠 العودة للرئيسية",
+                mainTitle: "نظام التوعية والتدريب في الأمن السيبراني",
+                ch6SubTitle: "الفصل السادس: حماية البيانات - تصنيف المعلومات وحفظها ومشاركتها بصورة آمنة ومنع تسريبها",
+                ch6Title1: "ماذا نقصد بحماية البيانات؟",
+                ch6Text1: "حماية البيانات هي مجموعة من السياسات، والإجراءات، والتقنيات التي تهدف إلى ضمان السرية (Confidentiality)، والسلامة (Integrity)، والتوافرية (Availability) للمعلومات الرقمية طوال دورة حياتها (من لحظة إنشائها أو جمعها، وحتى تخزينها، ومشاركتها، وأرشفتها، أو إتلافها).",
+                ch6Title2: "أهمية حماية البيانات",
+                ch6_imp1: "منع التسريب والاختراق: تحمي المؤسسات والأفراد من الوصول غير المصرح به أو سرقة البيانات الحساسة مثل البيانات الشخصية، المالية، أو الأسرار التجارية.",
+                ch6_imp2: "بناء الثقة والامتثال: تعزز ثقة العملاء والمستخدمين، وتساعد على الالتزام بالمعايير والقوانين المنظمة للخصوصية وحماية البيانات.",
+                ch6_imp3: "تقليل الخسائر: تحدّ من الأضرار التشغيلية والمالية والسمعية الناتجة عن الحوادث السيبرانية.",
+                ch6Title3: "الآليات الجوهرية لحماية البيانات",
+                ch6SubEnc: "التشفير (Encryption)",
+                ch6TextEnc: "تحويل البيانات من صيغتها المقروءة إلى رموز مشفرة لا يمكن فكها إلا بامتلاك مفتاح التشفير الصحيح، ويشمل:",
+                ch6_enc1: "تشفير البيانات المخزنة (Data at Rest): حماية الملفات المحفوظة على الخوادم، قواعد البيانات، والأقراص الصلبة باستخدام خوارزميات قوية مثل AES-256.",
+                ch6_enc2: "تشفير البيانات المنقولة (Data in Transit): تأمين البيانات أثناء انتقالها عبر الشبكات والإنترنت لمنع التنصت عليها، عبر بروتوكولات مثل TLS 1.3 والشبكات الافتراضية الخاصة (VPN).",
+                ch6_enc3: "إدارة المفاتيح (Key Management): عزل مفاتيح التشفير وتأمينها في وحدات مخصصة (HSM) وتحديثها دورياً.",
+                ch6SubDlp: "منع فقدان وتسريب البيانات (Data Loss Prevention - DLP)",
+                ch6TextDlp: "حلول برمجية تراقب حركة البيانات وتمنع خروج المعلومات الحساسة خارج بيئة العمل الآمنة:",
+                ch6_dlp1: "مراقبة الشبكة: فحص رسائل البريد الإلكتروني والملفات المرفوعة عبر المتصفحات لمنع إرسال البيانات السرية.",
+                ch6_dlp2: "التحكم في الأجهزة الطرفية: منع نسخ البيانات الحساسة إلى وحدات التخزين الخارجية (USB)، أو حظر طباعتها أو التقاط صور لها.",
+                ch6SubClass: "تصنيف البيانات (Data Classification)",
+                ch6TextClass: "فرز البيانات وتنظيمها بناءً على درجة حساسيتها وأهميتها لتطبيق مستوى الحماية المناسب لكل فئة:",
+                ch6_cls1: "بيانات عامة: متاحة للنشر ولا يشكّل كشفها خطراً.",
+                ch6_cls2: "بيانات داخلية: مخصصة للاستخدام داخل المؤسسة فقط.",
+                ch6_cls3: "بيانات سرية ومقيدة: مثل البيانات المالية، الطبية، والشخصية.",
+                ch6SubIam: "التحكم في الوصول وإدارة الهويات (IAM)",
+                ch6TextIam: "تقييد صلاحيات الاطلاع على البيانات وتعديلها بناءً على هوية المستخدم ودوره الوظيفي:",
+                ch6_iam1: "مبدأ أقل صلاحية (Least Privilege): منح المستخدم الحد الأدنى من الصلاحيات اللازمة لأداء مهامه فقط.",
+                ch6_iam2: "المصادقة متعددة العوامل (MFA): اشتراط أكثر من وسيلة للتحقق من الهوية قبل السماح بالوصول إلى البيانات الحساسة.",
+                ch6SubMask: "إخفاء البيانات والترميز (Data Masking & Tokenization)",
+                ch6_msk1: "إخفاء البيانات (Masking): استبدال البيانات الحقيقية بقيم وهمية تحافظ على نفس الشكل الهيكلي (مثل إخفاء أجزاء من رقم الهوية أو الحساب) عند استخدامها في بيئات الاختبار أو التحليل.",
+                ch6_msk2: "الترميز (Tokenization): استبدال البيانات الحساسة برمز عشوائي فريد (Token) مع حفظ البيانات الأصلية في خزينة رقمية معزولة.",
+                ch6SubBackup: "النسخ الاحتياطي والإتلاف الآمن (Backup & Secure Disposal)",
+                ch6_bkp1: "النسخ الاحتياطي: إنشاء نسخ احتياطية مشفرة ومعزولة (وفق قاعدة 3-2-1) لضمان استعادة البيانات بسرعة في حال التعرض لهجمات الفدية (Ransomware) أو الأعطال الفنية.",
+                ch6_bkp2: "الإتلاف الآمن: مسح البيانات نهائياً عند انتهاء الحاجة إليها عبر الكتابة فوق قطاعات التخزين (Data Wiping) أو إتلاف مفاتيح التشفير الخاصة بها (Cryptographic Erasure) لمنع استرجاعها بأي أداة جنائية.",
+                ch6Title4: "خطوات سريعة لحماية بياناتك يومياً",
+                ch6_tip1: "قفل الشاشة والتشفير: استخدم كلمة مرور أو بصمة، لحماية ملفاتك إذا فُقد جهازك أو سُرق.",
+                ch6_tip2: "مشاركة الملفات بحذر: لا تشارك ملفاتك مع الجميع، واجعل صلاحية الوصول محدودة.",
+                ch6_tip3: "تقليل مشاركة البيانات: لا تنشر معلوماتك الشخصية إلا عند الضرورة.",
+                ch6_tip4: "مراجعة أذونات التطبيقات: امنع التطبيقات من الوصول إلى الموقع أو جهات الاتصال دون حاجة.",
+                ch6_tip5: "مسح بيانات الأجهزة: احذف بياناتك بالكامل قبل بيع جهازك أو إعطائه لشخص آخر.",
+                ch6_tip6: "تجنب الشبكات العامة: لا تستخدم شبكات الواي فاي أو منافذ الشحن العامة لإدخال معلومات حساسة.",
+                ch6_tip7: "الحذر من الذكاء الاصطناعي: لا تضع كلمات المرور أو المعلومات السرية في أدوات الذكاء الاصطناعي.",
+                ch6_tip8: "تنبيهات تسجيل الدخول: فعّل إشعارات الدخول لتعرف إذا حاول شخص الدخول إلى حسابك.",
+                prevChapterBtn: "⬅️ العودة للفصل الخامس",
+                nextChapterBtn: "الانتقال للفصل السابع: النسخ الاحتياطي ➡️",
+                footerText: "جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني"
+            },
+            en: {
+                backHome: "🏠 Back to Home",
+                mainTitle: "Cybersecurity Awareness and Training System",
+                ch6SubTitle: "Chapter 6: Data Protection - Classifying, storing, and sharing information securely to prevent leaks",
+                ch6Title1: "What Do We Mean by Data Protection?",
+                ch6Text1: "Data protection is a set of policies, procedures, and technologies aimed at ensuring the Confidentiality, Integrity, and Availability of digital information throughout its entire lifecycle—from creation or collection to storage, sharing, archiving, or disposal.",
+                ch6Title2: "Importance of Data Protection",
+                ch6_imp1: "Preventing Leaks and Breaches: Protects organizations and individuals from unauthorized access or theft of sensitive data such as personal, financial, or trade secrets.",
+                ch6_imp2: "Building Trust and Compliance: Enhances customer and user trust and helps comply with privacy and data protection regulations and standards.",
+                ch6_imp3: "Minimizing Losses: Reduces operational, financial, and reputational damage resulting from cyber incidents.",
+                ch6Title3: "Core Mechanisms of Data Protection",
+                ch6SubEnc: "Encryption",
+                ch6TextEnc: "Converting readable data into encoded ciphertext that can only be decrypted with the proper encryption key, including:",
+                ch6_enc1: "Data at Rest Encryption: Protecting files stored on servers, databases, and hard drives using strong algorithms like AES-256.",
+                ch6_enc2: "Data in Transit Encryption: Securing data while moving across networks and the internet to prevent eavesdropping via protocols such as TLS 1.3 and VPNs.",
+                ch6_enc3: "Key Management: Isolating and securing encryption keys in dedicated Hardware Security Modules (HSM) and rotating them periodically.",
+                ch6SubDlp: "Data Loss Prevention (DLP)",
+                ch6TextDlp: "Software solutions that monitor data movement and prevent sensitive information from leaving the secure work environment:",
+                ch6_dlp1: "Network Monitoring: Inspecting emails and files uploaded via browsers to block unauthorized transmission of confidential data.",
+                ch6_dlp2: "Endpoint Control: Preventing copying sensitive data to external USB drives, or blocking printing and screenshots.",
+                ch6SubClass: "Data Classification",
+                ch6TextClass: "Sorting and organizing data based on its sensitivity and importance to apply the appropriate level of protection to each category:",
+                ch6_cls1: "Public Data: Available for public release and poses no risk if disclosed.",
+                ch6_cls2: "Internal Data: Intended strictly for internal use within the organization.",
+                ch6_cls3: "Confidential and Restricted Data: Such as financial, medical, and personal records.",
+                ch6SubIam: "Identity and Access Management (IAM)",
+                ch6TextIam: "Restricting permissions to view and modify data based on user identity and job role:",
+                ch6_iam1: "Least Privilege Principle: Granting users only the minimum level of permissions required to perform their tasks.",
+                ch6_iam2: "Multi-Factor Authentication (MFA): Requiring more than one verification method before granting access to sensitive data.",
+                ch6SubMask: "Data Masking & Tokenization",
+                ch6_msk1: "Data Masking: Replacing real data with fictitious values that preserve the structural format (such as masking parts of an ID or account number) in testing or analytics environments.",
+                ch6_msk2: "Tokenization: Substituting sensitive data with a unique random token while storing the original data in an isolated digital vault.",
+                ch6SubBackup: "Backup & Secure Disposal",
+                ch6_bkp1: "Backup: Creating encrypted and isolated backups (following the 3-2-1 rule) to ensure rapid data recovery in case of ransomware attacks or technical failures.",
+                ch6_bkp2: "Secure Disposal: Permanently erasing data when no longer needed through Data Wiping or Cryptographic Erasure to prevent recovery by any forensic tool.",
+                ch6Title4: "Quick Steps to Protect Your Data Daily",
+                ch6_tip1: "Screen Lock & Encryption: Use a strong password or biometric lock to protect your files if your device is lost or stolen.",
+                ch6_tip2: "Share Files Cautiously: Avoid sharing files publicly and keep access permissions restricted.",
+                ch6_tip3: "Minimize Data Sharing: Do not publish your personal information unless strictly necessary.",
+                ch6_tip4: "Review App Permissions: Prevent apps from accessing location or contacts when unnecessary.",
+                ch6_tip5: "Wipe Old Devices: Completely erase your data before selling or giving away your device.",
+                ch6_tip6: "Avoid Public Networks: Do not use public Wi-Fi or public charging stations to enter sensitive information.",
+                ch6_tip7: "Be Careful with AI Tools: Never enter passwords or confidential data into AI tools.",
+                ch6_tip8: "Enable Login Alerts: Turn on login notifications so you know immediately if someone tries to access your account.",
+                prevChapterBtn: "⬅️ Back to Chapter 5",
+                nextChapterBtn: "Proceed to Chapter 7: Backup & Recovery ➡️",
+                footerText: "All Rights Reserved © 2027 | Cybersecurity Awareness and Training System"
+            }
+        };
+
+        function toggleChapterLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('cyberLang', currentLang);
+            const htmlRoot = document.getElementById('htmlRoot');
+            htmlRoot.setAttribute('lang', currentLang);
+            htmlRoot.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (ch6Translations[currentLang][key]) {
+                    el.innerText = ch6Translations[currentLang][key];
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (currentLang === 'en') {
+                toggleChapterLanguage();
+                currentLang = 'en';
+            }
+            if (localStorage.getItem('cyberThemeMode') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

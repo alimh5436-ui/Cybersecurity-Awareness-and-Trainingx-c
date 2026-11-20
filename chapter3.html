@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ch3PageTitle">نظام التوعية والتدريب في الأمن السيبراني - الفصل الثالث</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slide-in-right {
+            animation: slideRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes slideRight {
+            0% { opacity: 0; transform: translateX(60px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .media-box { text-align: center; margin: 25px 0; }
+        .media-box img {
+            max-width: 100%; height: auto; border-radius: 12px;
+            border: 1px solid #334155; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        .content-paragraph { color: #e2e8f0; font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        body.light-mode .content-paragraph { color: #0f172a !important; font-weight: 500; }
+        
+        .sub-heading { color: #38bdf8; font-size: 1.25rem; margin: 20px 0 10px 0; }
+        body.light-mode .sub-heading { color: #2563eb !important; }
+
+        .custom-list { list-style: none; padding-right: 0; margin-bottom: 20px; }
+        .custom-list li { position: relative; padding-right: 25px; margin-bottom: 12px; color: #cbd5e1; line-height: 1.7; }
+        body.light-mode .custom-list li { color: #1e293b !important; font-weight: 500; }
+        .custom-list li::before { content: "🔹"; position: absolute; right: 0; top: 2px; }
+
+        body.light-mode .intro-card { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box h3, body.light-mode .feature-box p { color: #0f172a !important; }
+        body.light-mode .centered-title { color: #2563eb !important; }
+    </style>
+</head>
+<body>
+
+    <!-- أدوات التحكم العلوية -->
+    <div class="top-controls">
+        <a href="index.html" class="lang-switch-btn" style="text-decoration: none;" onclick="localStorage.setItem('cyberBackupEnabled', 'true');" data-i18n="backHome">🏠 العودة للرئيسية</a>
+        <button class="lang-switch-btn" onclick="toggleChapterLanguage()">🌐 EN / AR</button>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header class="header slide-in-right">
+        <h1 class="main-title" data-i18n="mainTitle">نظام التوعية والتدريب في الأمن السيبراني</h1>
+        <p class="subtitle" data-i18n="ch3SubTitle">الفصل الثالث: كلمات المرور والمصادقة - آليات التحقق من الهوية وإدارة الأمان الشخصي</p>
+    </header>
+
+    <main class="main-content slide-in-right">
+        
+        <!-- الفقرة الأولى -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch3Title1">ما هي المصادقة (Authentication)؟</h2>
+            <p class="content-paragraph" data-i18n="ch3Text1">
+                المصادقة هي العملية الأمنية التي يتم من خلالها التحقق من هوية المستخدم أو الجهاز أو النظام قبل السماح له بالوصول إلى الموارد أو البيانات الحساسة.
+            </p>
+            <div class="media-box">
+                <img src="c3img1.jpg" alt="مفهوم المصادقة">
+            </div>
+        </section>
+
+        <!-- الفقرة الثانية -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch3Title2">الفرق بين المصادقة والترخيص (Authorization)</h2>
+            <ul class="custom-list">
+                <li data-i18n="ch3_p2_1"><strong>المصادقة (Authentication):</strong> هي إثبات "من أنت؟" (مثل إدخال اسم المستخدم وكلمة المرور).</li>
+                <li data-i18n="ch3_p2_2"><strong>الترخيص (Authorization):</strong> هو تحديد "ما الذي يحق لك فعله؟" بعد التأكد من هويتك (مثل صلاحيات الوصول إلى ملف معين أو مدير النظام مقابل مستخدم عادي).</li>
+            </ul>
+            <div class="media-box">
+                <img src="c3img2.jpg" alt="الفرق بين المصادقة والترخيص">
+            </div>
+        </section>
+
+        <!-- الفقرة الثالثة -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch3Title3">عوامل المصادقة (Factors of Authentication)</h2>
+            <p class="content-paragraph" data-i18n="ch3Text3">
+                تعتمد أنظمة المصادقة على ثلاثة عوامل أساسية رئيسية، وكلما زادت العوامل المستخدمة، زادت صعوبة اختراق النظام:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch3_f1"><strong>العوامل المعرفية (Something you know):</strong> مثل كلمات المرور (Passwords)، أرقام التعريف الشخصية (PIN)، أو الإجابات على الأسئلة الأمنية.</li>
+                <li data-i18n="ch3_f2"><strong>العوامل المادية (Something you have):</strong> مثل الهواتف الذكية لتلقي رموز التحقق (OTP)، البطاقات الذكية (Smart Cards)، أو مفاتيح الأمان الفيزيائية (مثل مفاتيح YubiKey).</li>
+                <li data-i18n="ch3_f3"><strong>العوامل الذاتية (Something you are):</strong> مثل بصمة الإصبع، التعرف على الوجه، بصمة الصوت، أو مسح شبكية العين.</li>
+            </ul>
+            <div class="media-box">
+                <img src="c3img3.jpg" alt="عوامل المصادقة">
+            </div>
+        </section>
+
+        <!-- الفقرة الرابعة -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch3Title4">المصادقة التعددية ومتعددة العوامل (MFA / 2FA)</h2>
+            <p class="content-paragraph" data-i18n="ch3Text4_1">
+                <strong>المصادقة متعددة العوامل (Multi-Factor Authentication - MFA):</strong> هي استخدام عاملين أو أكثر من العوامل المذكورة أعلاه للتحقق من الهوية.
+            </p>
+            <p class="content-paragraph" data-i18n="ch3Text4_2">
+                <strong>لماذا هي ضرورية؟</strong> الاعتماد على كلمة المرور وحدها أصبح أمراً ضعيفاً وغير آمن نظراً لسهولة سرقتها أو تخمينها.
+            </p>
+            <h3 class="sub-heading" data-i18n="ch3SubMfa">أمثلة على MFA:</h3>
+            <ul class="custom-list">
+                <li data-i18n="ch3_mfa1">إدخال كلمة المرور (ما تعرفه) + رمز يتم إرساله عبر الرسائل النصية أو تطبيق المصادقة مثل Google Authenticator (ما تملكه).</li>
+                <li data-i18n="ch3_mfa2">كلمة المرور + بصمة الإصبع (ما تعرفه + ما تملكه/أنت عليه).</li>
+            </ul>
+            <div class="media-box">
+                <img src="c3img4.jpg" alt="المصادقة متعددة العوامل">
+            </div>
+        </section>
+
+        <!-- الفقرة الخامسة -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch3Title5">كلمات المرور (المشاكل والتحديات وأفضل الممارسات)</h2>
+            <p class="content-paragraph" data-i18n="ch3Text5_intro">
+                على الرغم من أنها الوسيلة الأكثر شيوعاً للمصادقة، إلا أن كلمات المرور تواجه العديد من الثغرات الأمنية:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch3_b1"><strong>هجمات القوة العمياء (Brute Force Attacks):</strong> تجربة عدد هائل من الاحتمالات تلقائياً حتى يتم تخمين كلمة المرور الصحيحة.</li>
+                <li data-i18n="ch3_b2"><strong>هجمات القاموس (Dictionary Attacks):</strong> استخدام قوائم جاهزة تحتوي على الكلمات الشائعة، التواريخ، والأسماء.</li>
+                <li data-i18n="ch3_b3"><strong>حشو بيانات الاعتماد (Credential Stuffing):</strong> استغلال تسريب كلمات المرور من مواقع معينة وتجربتها تلقائياً على منصات أخرى.</li>
+                <li data-i18n="ch3_b4"><strong>التصيد الاحتيالي (Phishing):</strong> خداع المستخدم لإدخال كلمة المرور الخاصة به في مواقع وهمية تشبه المواقع الأصلية.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="ch3SubBestPractices">أفضل الممارسات لإدارة كلمات المرور وحمايتها:</h3>
+            <ul class="custom-list">
+                <li data-i18n="ch3_bp1"><strong>الطول والتعقيد:</strong> يُفضل أن تكون كلمة المرور طويلة (لا تقل عن 12-16 خانة) وتتكون من مزيج عشوائي من الحروف الكبيرة والصغيرة والأرقام والرموز.</li>
+                <li data-i18n="ch3_bp2"><strong>استخدام مدير كلمات المرور (Password Manager):</strong> تطبيقات آمنة ومتخصصة لتوليد وتخزين كلمات مرور معقدة وفريدة لكل موقع.</li>
+                <li data-i18n="ch3_bp3"><strong>تجنب المعلومات الشخصية:</strong> الابتعاد نهائياً عن استخدام تواريخ الميلاد، أسماء الأقارب، أو أرقام الهواتف.</li>
+                <li data-i18n="ch3_bp4"><strong>تحديثها عند الشك:</strong> تغيير كلمة المرور فوراً إذا كان هناك اشتباه باختراق الحساب أو تسريب البيانات.</li>
+                <li data-i18n="ch3_bp5"><strong>تفعيل التوثيق الثنائي (MFA):</strong> كخط دفاع ثانٍ وثابت حتى في حال تسريب كلمة المرور.</li>
+            </ul>
+            <div class="media-box">
+                <img src="c3img5.jpg" alt="إدارة كلمات المرور وأفضل الممارسات">
+            </div>
+        </section>
+
+        <!-- الفقرة السادسة والملاحظة -->
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch3Title6">مستقبل المصادقة (نحو عالم بلا كلمات مرور - Passwordless)</h2>
+            <p class="content-paragraph" data-i18n="ch3Text6">
+                يتجه قطاع الأمن السيبراني تدريجياً نحو التخلي عن كلمات المرور التقليدية نظراً لعيوبها البشرية، واعتماد تقنيات أكثر أماناً مثل:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="ch3_passkeys"><strong>مفاتيح المرور (Passkeys):</strong> تقنية حديثة تعتمد على التشفير غير السماحي (Public-Key Cryptography) وتتيح للمستخدم تسجيل الدخول عبر البصمة أو التعرف على الوجه دون الحاجة لتذكر كلمة مرور نهائياً.</li>
+            </ul>
+
+            <p class="content-paragraph" style="background: rgba(56, 189, 248, 0.1); padding: 15px; border-right: 4px solid #38bdf8; border-radius: 6px; margin-top: 20px;" data-i18n="ch3SecurityNote">
+                <strong>ملاحظة أمنية هامة:</strong> أضعف حلقة في منظومة الأمن السيبراني غالباً ما تكون العنصر البشري. لذلك، يُعد الوعي الأمني المستمر وتدريب الموظفين والأفراد على اكتشاف محاولات التصيد الاحتيالي خطوة أساسية لا غنى عنها بجانب الأنظمة التقنية.
+            </p>
+            <div class="media-box">
+                <img src="c3img6.jpg" alt="مستقبل المصادقة ومفاتيح المرور">
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 40px 0; display: flex; justify-content: space-between; gap: 15px;">
+            <a href="chapter2.html" class="primary-btn" style="display: inline-block; padding: 12px 25px; text-decoration: none; width: auto; background: #334155; color: #f8fafc;" data-i18n="prevChapterBtn">⬅️ العودة للفصل الثاني</a>
+            <a href="chapter4.html" class="primary-btn" style="display: inline-block; padding: 12px 25px; text-decoration: none; width: auto;" data-i18n="nextChapterBtn">الانتقال إلى الفصل الرابع: البرمجيات الخبيثة ⬅️</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="footerText">جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني</p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('cyberLang') || 'ar';
+        
+        const ch3Translations = {
+            ar: {
+                backHome: "🏠 العودة للرئيسية",
+                mainTitle: "نظام التوعية والتدريب في الأمن السيبراني",
+                ch3SubTitle: "الفصل الثالث: كلمات المرور والمصادقة - آليات التحقق من الهوية وإدارة الأمان الشخصي",
+                ch3Title1: "ما هي المصادقة (Authentication)؟",
+                ch3Text1: "المصادقة هي العملية الأمنية التي يتم من خلالها التحقق من هوية المستخدم أو الجهاز أو النظام قبل السماح له بالوصول إلى الموارد أو البيانات الحساسة.",
+                ch3Title2: "الفرق بين المصادقة والترخيص (Authorization)",
+                ch3_p2_1: "المصادقة (Authentication): هي إثبات \"من أنت؟\" (مثل إدخال اسم المستخدم وكلمة المرور).",
+                ch3_p2_2: "الترخيص (Authorization): هو تحديد \"ما الذي يحق لك فعله؟\" بعد التأكد من هويتك (مثل صلاحيات الوصول إلى ملف معين أو مدير النظام مقابل مستخدم عادي).",
+                ch3Title3: "عوامل المصادقة (Factors of Authentication)",
+                ch3Text3: "تعتمد أنظمة المصادقة على ثلاثة عوامل أساسية رئيسية، وكلما زادت العوامل المستخدمة، زادت صعوبة اختراق النظام:",
+                ch3_f1: "العوامل المعرفية (Something you know): مثل كلمات المرور (Passwords)، أرقام التعريف الشخصية (PIN)، أو الإجابات على الأسئلة الأمنية.",
+                ch3_f2: "العوامل المادية (Something you have): مثل الهواتف الذكية لتلقي رموز التحقق (OTP)، البطاقات الذكية (Smart Cards)، أو مفاتيح الأمان الفيزيائية (مثل مفاتيح YubiKey).",
+                ch3_f3: "العوامل الذاتية (Something you are): مثل بصمة الإصبع، التعرف على الوجه، بصمة الصوت، أو مسح شبكية العين.",
+                ch3Title4: "المصادقة التعددية ومتعددة العوامل (MFA / 2FA)",
+                ch3Text4_1: "المصادقة متعددة العوامل (Multi-Factor Authentication - MFA): هي استخدام عاملين أو أكثر من العوامل المذكورة أعلاه للتحقق من الهوية.",
+                ch3Text4_2: "لماذا هي ضرورية؟ الاعتماد على كلمة المرور وحدها أصبح أمراً ضعيفاً وغير آمن نظراً لسهولة سرقتها أو تخمينها.",
+                ch3SubMfa: "أمثلة على MFA:",
+                ch3_mfa1: "إدخال كلمة المرور (ما تعرفه) + رمز يتم إرساله عبر الرسائل النصية أو تطبيق المصادقة مثل Google Authenticator (ما تملكه).",
+                ch3_mfa2: "كلمة المرور + بصمة الإصبع (ما تعرفه + ما تملكه/أنت عليه).",
+                ch3Title5: "كلمات المرور (المشاكل والتحديات وأفضل الممارسات)",
+                ch3Text5_intro: "على الرغم من أنها الوسيلة الأكثر شيوعاً للمصادقة، إلا أن كلمات المرور تواجه العديد من الثغرات الأمنية:",
+                ch3_b1: "هجمات القوة العمياء (Brute Force Attacks): تجربة عدد هائل من الاحتمالات تلقائياً حتى يتم تخمين كلمة المرور الصحيحة.",
+                ch3_b2: "هجمات القاموس (Dictionary Attacks): استخدام قوائم جاهزة تحتوي على الكلمات الشائعة، التواريخ، والأسماء.",
+                ch3_b3: "حشو بيانات الاعتماد (Credential Stuffing): استغلال تسريب كلمات المرور من مواقع معينة وتجربتها تلقائياً على منصات أخرى.",
+                ch3_b4: "التصيد الاحتيالي (Phishing): خداع المستخدم لإدخال كلمة المرور الخاصة به في مواقع وهمية تشبه المواقع الأصلية.",
+                ch3SubBestPractices: "أفضل الممارسات لإدارة كلمات المرور وحمايتها:",
+                ch3_bp1: "الطول والتعقيد: يُفضل أن تكون كلمة المرور طويلة (لا تقل عن 12-16 خانة) وتتكون من مزيج عشوائي من الحروف الكبيرة والصغيرة والأرقام والرموز.",
+                ch3_bp2: "استخدام مدير كلمات المرور (Password Manager): تطبيقات آمنة ومتخصصة لتوليد وتخزين كلمات مرور معقدة وفريدة لكل موقع.",
+                ch3_bp3: "تجنب المعلومات الشخصية: الابتعاد نهائياً عن استخدام تواريخ الميلاد، أسماء الأقارب، أو أرقام الهواتف.",
+                ch3_bp4: "تحديثها عند الشك: تغيير كلمة المرور فوراً إذا كان هناك اشتباه باختراق الحساب أو تسريب البيانات.",
+                ch3_bp5: "تفعيل التوثيق الثنائي (MFA): كخط دفاع ثانٍ وثابت حتى في حال تسريب كلمة المرور.",
+                ch3Title6: "مستقبل المصادقة (نحو عالم بلا كلمات مرور - Passwordless)",
+                ch3Text6: "يتجه قطاع الأمن السيبراني تدريجياً نحو التخلي عن كلمات المرور التقليدية نظراً لعيوبها البشرية، واعتماد تقنيات أكثر أماناً مثل:",
+                ch3_passkeys: "مفاتيح المرور (Passkeys): تقنية حديثة تعتمد على التشفير غير السماحي (Public-Key Cryptography) وتتيح للمستخدم تسجيل الدخول عبر البصمة أو التعرف على الوجه دون الحاجة لتذكر كلمة مرور نهائياً.",
+                ch3SecurityNote: "ملاحظة أمنية هامة: أضعف حلقة في منظومة الأمن السيبراني غالباً ما تكون العنصر البشري. لذلك، يُعد الوعي الأمني المستمر وتدريب الموظفين والأفراد على اكتشاف محاولات التصيد الاحتيالي خطوة أساسية لا غنى عنها بجانب الأنظمة التقنية.",
+                prevChapterBtn: "⬅️ العودة للفصل الثاني",
+                nextChapterBtn: "الانتقال إلى الفصل الرابع: البرمجيات الخبيثة ⬅️",
+                footerText: "جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني"
+            },
+            en: {
+                backHome: "🏠 Back to Home",
+                mainTitle: "Cybersecurity Awareness and Training System",
+                ch3SubTitle: "Chapter 3: Passwords and Authentication - Identity verification mechanisms and personal security management",
+                ch3Title1: "What is Authentication?",
+                ch3Text1: "Authentication is the security process of verifying the identity of a user, device, or system before granting access to sensitive resources.",
+                ch3Title2: "Difference Between Authentication and Authorization",
+                ch3_p2_1: "Authentication: Proving 'Who are you?' (e.g., entering username and password).",
+                ch3_p2_2: "Authorization: Determining 'What are you allowed to do?' after identity confirmation (e.g., file permissions).",
+                ch3Title3: "Factors of Authentication",
+                ch3Text3: "Authentication systems rely on three core factors. The more factors used, the harder it is to breach:",
+                ch3_f1: "Something you know: Passwords, PINs, or security answers.",
+                ch3_f2: "Something you have: Smartphones for OTPs, smart cards, or physical security keys (like YubiKey).",
+                ch3_f3: "Something you are: Fingerprint, facial recognition, voice print, or retina scan.",
+                ch3Title4: "Multi-Factor Authentication (MFA / 2FA)",
+                ch3Text4_1: "Multi-Factor Authentication (MFA): Using two or more of the above factors to verify identity.",
+                ch3Text4_2: "Why is it necessary? Relying solely on a password is weak and insecure due to ease of theft.",
+                ch3SubMfa: "Examples of MFA:",
+                ch3_mfa1: "Password (what you know) + Code via SMS or Auth App like Google Authenticator (what you have).",
+                ch3_mfa2: "Password + Fingerprint (what you know + what you have/are).",
+                ch3Title5: "Passwords (Issues, Challenges, and Best Practices)",
+                ch3Text5_intro: "Although most common, passwords face multiple security vulnerabilities:",
+                ch3_b1: "Brute Force Attacks: Automatically trying massive combinations until guessing the correct password.",
+                ch3_b2: "Dictionary Attacks: Using ready lists containing common words, dates, and names.",
+                ch3_b3: "Credential Stuffing: Exploiting leaked passwords from specific sites across other platforms.",
+                ch3_b4: "Phishing: Tricking users into entering passwords into fake sites resembling original ones.",
+                ch3SubBestPractices: "Best Practices for Password Management:",
+                ch3_bp1: "Length and Complexity: Passwords should be long (12-16+ chars) mixing letters, numbers, and symbols.",
+                ch3_bp2: "Password Manager: Secure apps to generate and store complex, unique passwords for every site.",
+                ch3_bp3: "Avoid Personal Info: Never use birthdates, relative names, or phone numbers.",
+                ch3_bp4: "Update on Suspicion: Change passwords immediately if breach is suspected.",
+                ch3_bp5: "Enable MFA: As a secondary defense line even if passwords leak.",
+                ch3Title6: "The Future of Authentication (Passwordless)",
+                ch3Text6: "Cybersecurity is shifting away from traditional passwords due to human flaws, adopting safer technologies like:",
+                ch3_passkeys: "Passkeys: Modern tech using public-key cryptography allowing login via fingerprint or facial recognition without passwords.",
+                ch3SecurityNote: "Important Security Note: The weakest link in cybersecurity is often the human element. Continuous awareness and training are indispensable.",
+                prevChapterBtn: "⬅️ Back to Chapter 2",
+                nextChapterBtn: "Proceed to Chapter 4: Malware ➡️",
+                footerText: "All Rights Reserved © 2027 | Cybersecurity Awareness and Training System"
+            }
+        };
+
+        function toggleChapterLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('cyberLang', currentLang);
+            const htmlRoot = document.getElementById('htmlRoot');
+            htmlRoot.setAttribute('lang', currentLang);
+            htmlRoot.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (ch3Translations[currentLang][key]) {
+                    el.innerText = ch3Translations[currentLang][key];
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (currentLang === 'en') {
+                toggleChapterLanguage();
+                currentLang = 'en';
+            }
+            if (localStorage.getItem('cyberThemeMode') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

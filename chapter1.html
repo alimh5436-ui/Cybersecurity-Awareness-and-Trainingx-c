@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ch1PageTitle">نظام التوعية والتدريب في الأمن السيبراني - الفصل الأول</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .slide-in-right {
+            animation: slideRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes slideRight {
+            0% { opacity: 0; transform: translateX(60px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .media-box { text-align: center; margin: 25px 0; }
+        .media-box img {
+            max-width: 650px; height: auto; border-radius: 5px;
+            border: 1px solid #334155; box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        .content-paragraph { color: #e2e8f0; font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        body.light-mode .content-paragraph { color: #0f172a !important; font-weight: 500; }
+        
+        .sub-heading { color: #38bdf8; font-size: 1.25rem; margin: 20px 0 10px 0; }
+        body.light-mode .sub-heading { color: #2563eb !important; }
+
+        .custom-list { list-style: none; padding-right: 0; margin-bottom: 20px; }
+        .custom-list li { position: relative; padding-right: 25px; margin-bottom: 12px; color: #cbd5e1; line-height: 1.7; }
+        body.light-mode .custom-list li { color: #1e293b !important; font-weight: 500; }
+        .custom-list li::before { content: "🔹"; position: absolute; right: 0; top: 2px; }
+
+        body.light-mode .intro-card { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box { background-color: #ffffff !important; color: #0f172a !important; border-color: #cbd5e1; }
+        body.light-mode .feature-box h3, body.light-mode .feature-box p { color: #0f172a !important; }
+        body.light-mode .centered-title { color: #2563eb !important; }
+    </style>
+</head>
+<body>
+
+    <!-- أدوات التحكم العلوية -->
+    <div class="top-controls">
+        <a href="index.html" class="lang-switch-btn" style="text-decoration: none;" onclick="localStorage.setItem('cyberBackupEnabled', 'true');" data-i18n="backHome">🏠 العودة للرئيسية</a>
+        <button class="lang-switch-btn" onclick="toggleChapterLanguage()">🌐 EN / AR</button>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header class="header slide-in-right">
+        <h1 class="main-title" data-i18n="mainTitle">نظام التوعية والتدريب في الأمن السيبراني</h1>
+        <p class="subtitle" data-i18n="ch1SubTitle">الفصل الأول: أساسيات الأمن السيبراني - تعرف على المفاهيم والتهديدات وكيفية تجنبها</p>
+    </header>
+
+    <main class="main-content slide-in-right">
+        
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch1Title1">ما هو الأمن السيبراني؟</h2>
+            <p class="content-paragraph" data-i18n="ch1Text1">
+                الأمن السيبراني هو درع الحماية الرقمي الذي يحمي بياناتك، أجهزتك، وحساباتك الشخصية من الاختراق أو السرقة عبر الإنترنت.
+            </p>
+            <p class="content-paragraph" data-i18n="ch1Text1Real">
+                <strong>مثال واقعي:</strong> عندما تغلق باب منزلك قبل النوم لحمايته هكذا يقوم الأمن السيبراني بحماية بياناتك.
+            </p>
+            <div class="media-box">
+                <img src="img1.jpg" alt="درع الحماية الرقمية">
+            </div>
+        </section>
+
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch1Title2">ركائز الأمن السيبراني</h2>
+            <div class="features-grid" style="margin-top: 20px;">
+                <div class="feature-box">
+                    <div class="box-icon">🔒</div>
+                    <h3 data-i18n="c1Title">السرية (Confidentiality)</h3>
+                    <p data-i18n="c1Desc">ضمان ألا يرى بياناتك الخاصة (مثل صورك، رسائلك، أو كلمات مرورك) سوى الشخص المخول بذلك.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="box-icon">🛡️</div>
+                    <h3 data-i18n="c2Title">السلامة (Integrity)</h3>
+                    <p data-i18n="c2Desc">التأكد من أن بياناتك لم يتم التلاعب بها أو تعديلها من قبل جهة خارجية خبيثة.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="box-icon">⚡</div>
+                    <h3 data-i18n="c3Title">التوفر (Availability)</h3>
+                    <p data-i18n="c3Desc">التأكد من أن حساباتك ومعلوماتك متاحة لك متى احتجت إليها، وألا يتعرض نظامك لهجمات تحرمك من الوصول إليها.</p>
+                </div>
+            </div>
+            <div class="media-box">
+                <img src="img2.jpg" alt="مخطط ركائز الأمن السيبراني">
+            </div>
+        </section>
+
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch1Title3">أبرز التهديدات السيبرانية الشائعة</h2>
+            <div class="features-grid" style="margin-top: 20px;">
+                <div class="feature-box">
+                    <div class="box-icon">🎣</div>
+                    <h3 data-i18n="t1Title">التصيد الإلكتروني (Phishing)</h3>
+                    <p data-i18n="t1Desc">رسائل وهمية تبدو كأنها من جهة رسمية (مثل البنك أو شركة اتصالات) تخدعك لإعطائك معلوماتك الشخصية.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="box-icon">🦠</div>
+                    <h3 data-i18n="t2Title">البرمجيات الخبيثة (Malware)</h3>
+                    <p data-i18n="t2Desc">فيروسات أو ملفات ضارة قد تختبئ في تطبيقات غير معتمدة لتدمير أو سرقة محتويات جهازك.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="box-icon">🔑</div>
+                    <h3 data-i18n="t3Title">ضعف كلمات المرور (Weak Passwords)</h3>
+                    <p data-i18n="t3Desc">استخدام كلمات مرور سهلة التخمين (مثل تاريخ الميلاد أو 123456) مما يسهل اختراق الحسابات بثوانٍ.</p>
+                </div>
+            </div>
+            <div class="media-box">
+                <img src="img3.jpg" alt="أبرز التهديدات السيبرانية الشائعة">
+            </div>
+        </section>
+
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch1Title4">أين يتواجد الأمن السيبراني في حياتنا؟</h2>
+            <p class="content-paragraph" data-i18n="ch1Text4">
+                الأمن السيبراني ليس محصوراً في الشركات الكبرى أو المصارف، بل يمس حياتك اليومية في كل لحظة تتصل فيها بالشبكة:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="l1"><strong>في هاتفك وجهازك الشخصي:</strong> لحماية صورك، رسائلك، ومستنداتك الخاصة من التسريب أو الضياع.</li>
+                <li data-i18n="l2"><strong>في تعاملاتك المالية:</strong> لتأمين عمليات الشراء عبر الإنترنت والحفاظ على بيانات بطاقاتك المصرفية.</li>
+                <li data-i18n="l3"><strong>في منصات التواصل الاجتماعي:</strong> لضمان عدم انتحال شخصيتك أو حظر حساباتك.</li>
+                <li data-i18n="l4"><strong>في بيئة العمل والدراسة:</strong> لحماية الأبحاث، البيانات الأكاديمية، والأنظمة المؤسسية من التلف.</li>
+            </ul>
+            <div class="media-box">
+                <img src="img4.jpg" alt="أين يتواجد الأمن السيبراني في حياتنا">
+            </div>
+        </section>
+
+        <section class="intro-card">
+            <h2 class="centered-title" data-i18n="ch1Title5">كيف تتعامل مع البيئة الرقمية بذكاء؟</h2>
+            <p class="content-paragraph" data-i18n="ch1Text5">
+                عند مواجهة أي موقف رقمي في حياتك اليومية، اعتمد قاعدة التروّي والتثبّت:
+            </p>
+            <ul class="custom-list">
+                <li data-i18n="s1"><strong>فكر قبل النقر:</strong> لا تتسرع بالضغط على الإعلانات البراقة، الروابط المغرية، أو العروض التي تبدو غير منطقية.</li>
+                <li data-i18n="s2"><strong>افصل بين الشخصي والعام:</strong> تجنب استخدام شبكات الواي فاي العامة (Wi-Fi) المفتوحة في الكافيهات والأماكن العامة لإجراء معاملات مالية أو تسجيل الدخول لحسابات حساسة.</li>
+                <li data-i18n="s3"><strong>النسخ الاحتياطي (Backup):</strong> تعامل مع بياناتك المهمة بافتراض إمكانية فقدان الجهاز في أي لحظة؛ احتفظ بنسخ احتياطية دورية على سحابة آمنة أو قرص صلب خارجي.</li>
+            </ul>
+
+            <h3 class="sub-heading" data-i18n="permTitle">الأذونات والصلاحيات (Permissions):</h3>
+            <p class="content-paragraph" data-i18n="permText1">
+                <strong>من يدخل جهازك؟</strong> عند تحميل أي تطبيق على هاتفك، فإنك تمنحه "مفاتيح" لبعض خواص الجهاز.
+            </p>
+            <p class="content-paragraph" style="background: rgba(56, 189, 248, 0.1); padding: 12px; border-right: 4px solid #38bdf8; border-radius: 6px;" data-i18n="permText2">
+                <strong>القاعدة الذهبية للاختبار السريع:</strong><br>
+                قبل أن تمنح التطبيق صلاحية الوصول، اسأل نفسك: <em>"هل هذه الصلاحية منطقية لوظيفة التطبيق؟"</em>
+            </p>
+            <div class="media-box">
+                <img src="img5.jpg" alt="دليل التحقق من الأذونات والصلاحيات">
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="chapter2.html" class="primary-btn" style="display: inline-block; padding: 12px 30px; text-decoration: none; width: auto;" data-i18n="nextChapterBtn">الانتقال إلى الفصل الثاني: كشف التصيد الاحتيالي ⬅️</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p data-i18n="footerText">جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني</p>
+    </footer>
+
+    <script>
+        let currentLang = localStorage.getItem('cyberLang') || 'ar';
+        
+        const ch1Translations = {
+            ar: {
+                backHome: "🏠 العودة للرئيسية",
+                mainTitle: "نظام التوعية والتدريب في الأمن السيبراني",
+                ch1SubTitle: "الفصل الأول: أساسيات الأمن السيبراني - تعرف على المفاهيم والتهديدات وكيفية تجنبها",
+                ch1Title1: "ما هو الأمن السيبراني؟",
+                ch1Text1: "الأمن السيبراني هو درع الحماية الرقمي الذي يحمي بياناتك، أجهزتك، وحساباتك الشخصية من الاختراق أو السرقة عبر الإنترنت.",
+                ch1Text1Real: "مثال واقعي: عندما تغلق باب منزلك قبل النوم لحمايته هكذا يقوم الأمن السيبراني بحماية بياناتك.",
+                ch1Title2: "ركائز الأمن السيبراني",
+                c1Title: "السرية (Confidentiality)",
+                c1Desc: "ضمان ألا يرى بياناتك الخاصة (مثل صورك، رسائلك، أو كلمات مرورك) سوى الشخص المخول بذلك.",
+                c2Title: "السلامة (Integrity)",
+                c2Desc: "التأكد من أن بياناتك لم يتم التلاعب بها أو تعديلها من قبل جهة خارجية خبيثة.",
+                c3Title: "التوفر (Availability)",
+                c3Desc: "التأكد من أن حساباتك ومعلوماتك متاحة لك متى احتجت إليها، وألا يتعرض نظامك لهجمات تحرمك من الوصول إليها.",
+                ch1Title3: "أبرز التهديدات السيبرانية الشائعة",
+                t1Title: "التصيد الإلكتروني (Phishing)",
+                t1Desc: "رسائل وهمية تبدو كأنها من جهة رسمية (مثل البنك أو شركة اتصالات) تخدعك لإعطائك معلوماتك الشخصية.",
+                t2Title: "البرمجيات الخبيثة (Malware)",
+                t2Desc: "فيروسات أو ملفات ضارة قد تختبئ في تطبيقات غير معتمدة لتدمير أو سرقة محتويات جهازك.",
+                t3Title: "ضعف كلمات المرور (Weak Passwords)",
+                t3Desc: "استخدام كلمات مرور سهلة التخمين (مثل تاريخ الميلاد أو 123456) مما يسهل اختراق الحسابات بثوانٍ.",
+                ch1Title4: "أين يتواجد الأمن السيبراني في حياتنا؟",
+                ch1Text4: "الأمن السيبراني ليس محصوراً في الشركات الكبرى أو المصارف، بل يمس حياتك اليومية في كل لحظة تتصل فيها بالشبكة:",
+                l1: "في هاتفك وجهازك الشخصي: لحماية صورك، رسائلك، ومستنداتك الخاصة من التسريب أو الضياع.",
+                l2: "في تعاملاتك المالية: لتأمين عمليات الشراء عبر الإنترنت والحفاظ على بيانات بطاقاتك المصرفية.",
+                l3: "في منصات التواصل الاجتماعي: لضمان عدم انتحال شخصيتك أو حظر حساباتك.",
+                l4: "في بيئة العمل والدراسة: لحماية الأبحاث، البيانات الأكاديمية، والأنظمة المؤسسية من التلف.",
+                ch1Title5: "كيف تتعامل مع البيئة الرقمية بذكاء؟",
+                ch1Text5: "عند مواجهة أي موقف رقمي في حياتك اليومية، اعتمد قاعدة التروّي والتثبّت:",
+                s1: "فكر قبل النقر: لا تتسرع بالضغط على الإعلانات البراقة، الروابط المغرية، أو العروض التي تبدو غير منطقية.",
+                s2: "افصل بين الشخصي والعام: تجنب استخدام شبكات الواي فاي العامة (Wi-Fi) المفتوحة في الكافيهات والأماكن العامة لإجراء معاملات مالية أو تسجيل الدخول لحسابات حساسة.",
+                s3: "النسخ الاحتياطي (Backup): تعامل مع بياناتك المهمة بافتراض إمكانية فقدان الجهاز في أي لحظة؛ احتفظ بنسخ احتياطية دورية على سحابة آمنة أو قرص صلب خارجي.",
+                permTitle: "الأذونات والصلاحيات (Permissions):",
+                permText1: "من يدخل جهازك؟ عند تحميل أي تطبيق على هاتفك، فإنك تمنحه \"مفاتيح\" لبعض خواص الجهاز.",
+                permText2: "القاعدة الذهبية للاختبار السريع:\nقبل أن تمنح التطبيق صلاحية الوصول، اسأل نفسك: هل هذه الصلاحية منطقية لوظيفة التطبيق؟",
+                nextChapterBtn: "الانتقال إلى الفصل الثاني: كشف التصيد الاحتيالي ⬅️",
+                footerText: "جميع حقوق الطبع والنشر محفوظة © 2027 | نظام التوعية والتدريب في الأمن السيبراني"
+            },
+            en: {
+                backHome: "🏠 Back to Home",
+                mainTitle: "Cybersecurity Awareness and Training System",
+                ch1SubTitle: "Chapter 1: Cybersecurity Basics - Learn core concepts, threats, and how to avoid them",
+                ch1Title1: "What is Cybersecurity?",
+                ch1Text1: "Cybersecurity is the digital shield that protects your data, devices, and personal accounts from online hacking or theft.",
+                ch1Text1Real: "Real-world example: Just as you lock your front door before going to sleep to protect it, cybersecurity protects your data.",
+                ch1Title2: "Core Pillars of Cybersecurity",
+                c1Title: "Confidentiality",
+                c1Desc: "Ensuring that only authorized individuals can view your private data (such as photos, messages, or passwords).",
+                c2Title: "Integrity",
+                c2Desc: "Making sure your data has not been tampered with or modified by malicious third parties.",
+                c3Title: "Availability",
+                c3Desc: "Ensuring your accounts and information are accessible whenever you need them, without interruption.",
+                ch1Title3: "Common Cyber Threats",
+                t1Title: "Phishing",
+                t1Desc: "Fake messages appearing to be from official entities (like a bank or telecom) tricking you into revealing personal info.",
+                t2Title: "Malware",
+                t2Desc: "Viruses or harmful files hiding in unverified apps to destroy or steal your device contents.",
+                t3Title: "Weak Passwords",
+                t3Desc: "Using easily guessable passwords (like birthdates or 123456) making accounts vulnerable in seconds.",
+                ch1Title4: "Where is Cybersecurity in Our Daily Lives?",
+                ch1Text4: "Cybersecurity is not limited to major corporations or banks; it touches your daily life every moment you connect:",
+                l1: "On your phone and personal device: Protecting your photos, messages, and private documents from leaks.",
+                l2: "In financial transactions: Securing online purchases and safeguarding credit card data.",
+                l3: "In social media platforms: Preventing identity impersonation or account bans.",
+                l4: "In work and study environments: Shielding academic research and institutional systems from damage.",
+                ch1Title5: "How to Smartly Navigate the Digital Environment?",
+                ch1Text5: "When facing any digital situation, adopt the rule of deliberation and verification:",
+                s1: "Think Before You Click: Don't rush into clicking flashy ads, tempting links, or illogical offers.",
+                s2: "Separate Personal and Public: Avoid public Wi-Fi networks in cafes for financial transactions or logging into sensitive accounts.",
+                s3: "Backup: Treat important data assuming device loss at any moment; keep periodic backups on secure clouds or external drives.",
+                permTitle: "Permissions and Authorizations:",
+                permText1: "Who enters your device? When downloading any app, you grant it 'keys' to certain device features.",
+                permText2: "Golden Rule for Quick Testing:\nBefore granting app permission, ask yourself: Is this permission logical for the app's function?",
+                nextChapterBtn: "Proceed to Chapter 2: Phishing Detection ➡️",
+                footerText: "All Rights Reserved © 2027 | Cybersecurity Awareness and Training System"
+            }
+        };
+
+        function toggleChapterLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            localStorage.setItem('cyberLang', currentLang);
+            const htmlRoot = document.getElementById('htmlRoot');
+            htmlRoot.setAttribute('lang', currentLang);
+            htmlRoot.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (ch1Translations[currentLang][key]) {
+                    el.innerText = ch1Translations[currentLang][key];
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (currentLang === 'en') {
+                toggleChapterLanguage();
+                currentLang = 'en';
+            }
+            if (localStorage.getItem('cyberThemeMode') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
